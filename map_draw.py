@@ -25,7 +25,7 @@ def search_street(origin, destination):
             valid_indexs.append(found_locations)
     return valid_transport, valid_indexs
 
-# Finds shoretes route out of all routes
+# Finds shortest route out of all routes
 def find_shortest(valid_transport, valid_index):
     difference = []
     for i in range (len(valid_index)):
@@ -84,9 +84,8 @@ def plot(road_draw, valid_transport, color):
 
 def main():
     print "<-<-<-<-< Welcome to TranspoRoute >->->->->"
-    origin = raw_input("Input your origin point: ")
-    destination = raw_input("Input your destination point: ")
-
+    origin = raw_input("Input your origin point: ").title()
+    destination = raw_input("Input your destination point: ").title()
     valid_transport, valid_index = search_street(origin, destination)
     valid_transport_str = ''
     for i in range (len(valid_transport)):
